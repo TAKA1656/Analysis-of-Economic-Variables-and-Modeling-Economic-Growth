@@ -39,11 +39,14 @@ Before feeding the data into a complex mathematical model, it is crucial to visu
 
 #### Key Observations:
 
-* Major Economic Shocks: We can clearly identify massive spikes and drops in the Economic Growth Rate and Unemployment Rate, particularly around the 2008 Financial Crisis and the 2020 COVID-19 pandemic. These are profound, unpredictable external shocks.
+* Major Economic Shocks <br>
+We can clearly identify massive spikes and drops in the Economic Growth Rate and Unemployment Rate, particularly around the 2008 Financial Crisis and the 2020 COVID-19 pandemic. These are profound, unpredictable external shocks.
 
-* Inverse Relationships: Visually, there appears to be a natural friction between the Unemployment Rate and Economic Growth, when one spikes, the other reacts as well.
+* Inverse Relationships <br>
+Visually, there appears to be a natural friction between the Unemployment Rate and Economic Growth, when one spikes, the other reacts as well.
 
-* The “Lag” Intuition: If you look closely at the Federal Funds Rate and Inflation, their peaks and valleys do not always perfectly align with the dips in Economic Growth. They seem to trail behind or precede the growth curve, confirming our initial hypothesis: economic variables do not react instantly; they operate on a time delay.
+* The “Lag” Intuition <br>
+If you look closely at the Federal Funds Rate and Inflation, their peaks and valleys do not always perfectly align with the dips in Economic Growth. They seem to trail behind or precede the growth curve, confirming our initial hypothesis: economic variables do not react instantly; they operate on a time delay.
 
 ### 3. Impulse Response Analysis
 Here, we will run the Impulse Response Function (IRF). An IRF allows us to simulate a hypothetical scenario: What exactly happens to Economic Growth over the next 10 quarters if we apply a sudden “shock” (a 1-standard-deviation increase) to one specific variable, while holding everything else constant? Below is the resulting plot from the analysis.
