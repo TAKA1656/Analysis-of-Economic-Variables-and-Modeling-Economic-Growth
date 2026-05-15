@@ -39,14 +39,11 @@ Before feeding the data into a complex mathematical model, it is crucial to visu
 
 #### Key Observations:
 
-##### Major Economic Shocks
-We can clearly identify massive spikes and drops in the Economic Growth Rate and Unemployment Rate, particularly around the 2008 Financial Crisis and the 2020 COVID-19 pandemic. These are profound, unpredictable external shocks.
+* Major Economic Shocks: We can clearly identify massive spikes and drops in the Economic Growth Rate and Unemployment Rate, particularly around the 2008 Financial Crisis and the 2020 COVID-19 pandemic. These are profound, unpredictable external shocks.
 
-##### Inverse Relationships 
-Visually, there appears to be a natural friction between the Unemployment Rate and Economic Growth, when one spikes, the other reacts as well.
+* Inverse Relationships: Visually, there appears to be a natural friction between the Unemployment Rate and Economic Growth, when one spikes, the other reacts as well.
 
-##### The “Lag” Intuition 
-If you look closely at the Federal Funds Rate and Inflation, their peaks and valleys do not always perfectly align with the dips in Economic Growth. They seem to trail behind or precede the growth curve, confirming our initial hypothesis: economic variables do not react instantly; they operate on a time delay.
+* The “Lag” Intuition: If you look closely at the Federal Funds Rate and Inflation, their peaks and valleys do not always perfectly align with the dips in Economic Growth. They seem to trail behind or precede the growth curve, confirming our initial hypothesis: economic variables do not react instantly; they operate on a time delay.
 
 ### 3. Impulse Response Analysis
 Here, we will run the Impulse Response Function (IRF). An IRF allows us to simulate a hypothetical scenario: What exactly happens to Economic Growth over the next 10 quarters if we apply a sudden “shock” (a 1-standard-deviation increase) to one specific variable, while holding everything else constant? Below is the resulting plot from the analysis.
@@ -63,13 +60,13 @@ Before diving into the results, here is a quick guide on how to interpret the Im
 * Crossing Zero: If the grey shaded area crosses or touches the zero line, it means the effect is not statistically significant. In this case, the impact is so uncertain that the true effect might just be zero. We can only confidently say a shock has a real impact when the entire grey area is clearly above or below the zero line.
 
 #### Results
-##### The Unemployment Shock
+* The Unemployment Shock
 When the Unemployment Rate spikes, the model shows an immediate and mathematically significant negative impact on Economic Growth. However, the graph reveals that the economy doesn’t recover instantly; the negative drag persists for several quarters before returning to the baseline, illustrating the stickiness of job losses.　
 
-##### The Federal Funds Rate Shock
+* The Federal Funds Rate Shock
 A sudden hike in interest rates by the Fed creates a delayed reaction. It doesn’t instantly crash the economy in Quarter 1. Instead, the model captures how the higher borrowing costs, i.e., higher interest rates, slowly seep into the system, steadily dragging down Economic Growth in the subsequent quarters (lags 2 and 3) before leveling out.
 
-##### The “Consumer Sentiment” Revelation
+* The “Consumer Sentiment” Revelation
 One of the most surprising insights came from testing Consumer Sentiment. While it makes intuitive sense that a pessimistic public would spend less and slow down growth, the p-values in our VAR model suggested it wrong. Consumer Sentiment ultimately proved to be statistically insignificant when controlling for hard data like unemployment and interest rates. It turns out, how people feel about the economy does not independently drive growth; rather, their feelings are merely a reaction to the hard data.
 
 ### 4. Actual vs. Predicted Growth
@@ -77,9 +74,9 @@ Given the information above, we are able to create an equation that best represe
 
 #### Interpreting the Accuracy Metrics:
 
-##### An $R^2$ of 0.253
+* An $R^2$ of 0.253
 In the context of physics, a 25% explanatory power might seem low. However, in macroeconomics, this is a profound finding. It mathematically proves that about 25% of the U.S. economic growth is strictly driven by the structural, delayed cycles of past unemployment, interest rates, and inflation.
-##### The Remaining 75%
+* The Remaining 75%
 The moments where the actual data (Blue) drastically breaks away from our prediction (Red)—such as the massive 2020 spike—represent the remaining 75%. These are the unpredictable events, like global pandemics or sudden geopolitical crises, which cannot be forecasted merely by looking at last quarter’s interest rates.
 
 
