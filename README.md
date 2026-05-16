@@ -32,10 +32,10 @@ I used the data all from Federal Reserve Bank of St.Louis as csv files.
   
 ## Procedure
 ### 1. Data Collection and Wrangling
-I collected five different economic indicators from public databases. However, real-world data is rarely perfect—each dataset covered different time periods and frequencies. To ensure an accurate analysis, I merged these distinct sources by matching their observation dates, keeping only the timeframe where all five indicators perfectly overlapped. This gave me a clean, unified dataset to base my mathematical models on.
+I collected five different economic indicators from public databases. However, real-world data is rarely perfect, each dataset covered different time periods and frequencies. To ensure an accurate analysis, I merged these distinct sources by matching their observation dates, keeping only the timeframe where all five indicators perfectly overlapped. This gave me a clean, unified dataset to base my mathematical models on.
 
 ### 2. Visualizing the Macroeconomic Landscape over Time
-Before feeding the data into a complex mathematical model, it is crucial to visually inspect the historical trends of our variables. The time-series plots below illustrate the dynamic behavior of the U.S. economy over the past few decades. 
+Before feeding the data into a complex mathematical model, it is crucial to visually inspect the historical trends of our variables. The time-series plots below illustrate the dynamic behavior of the US economy over the past few decades. 
 
 #### Key Observations:
 
@@ -69,12 +69,20 @@ When the Unemployment Rate spikes, the model shows an immediate and mathematical
 A sudden hike in interest rates by the Fed creates a delayed reaction. It doesn’t instantly crash the economy in Quarter 1. Instead, the model captures how the higher borrowing costs, i.e., higher interest rates, slowly seep into the system, steadily dragging down Economic Growth in the subsequent quarters (lags 2 and 3) before leveling out.
 
 * **The “Consumer Sentiment” Revelation**<br>
-One of the most surprising insights came from testing Consumer Sentiment. While it makes intuitive sense that a pessimistic public would spend less and slow down growth, the p-values in our VAR model suggested it wrong. Consumer Sentiment ultimately proved to be statistically insignificant when controlling for hard data like unemployment and interest rates. It turns out, how people feel about the economy does not independently drive growth; rather, their feelings are merely a reaction to the hard data.
+From the plot, human feelings aren't just statistical noise. The green confidence interval rises clearly above the zero line for the first few quarters. This provides mathematical proof that an optimistic public actually drives real economic growth, likely because confident consumers spend more money, creating a positive ripple effect throughout the economy.
 
 ### 4. Actual vs. Predicted Growth
 Given the information above, we are able to create an equation that best represents the present Economic Growth with given parameters. The graph below plots the actual historical Economic Growth (Blue) against what our mathematical model predicted (Red).
 <img width="1264" height="569" alt="newplot (1)" src="https://github.com/user-attachments/assets/00fcd7c3-a3ed-4d47-a8ce-83fc4f7d1d4d" />
 
+#### The Equation
+
+By filtering out the statistical noise and keeping only the highly significant variables, we built a structural equation. It reveals that today's Economic Growth is fundamentally driven by:
+* The growth rates from the past 1 to 2 quarters.
+* The unemployment rate from the past 1 to 2 quarters.
+* The interest rate (Federal Funds Rate) set by the Fed exactly 2 quarters ago.
+
+It might seem wierd that Consumer Sentiment is missing from the derived equation above, even though our earlier IRF graphs proved it has a significant impact. The equation only shows direct impacts on GDP. This means that consumer Sentiment doesn't directly increase GDP; instead, it triggers a ripple effect (e.g., confident consumers spend more, which lowers unemployment), and those other variables then boost GDP two quarters later. The equation shows the last variable that causally affects economic growth, but the IRF simulation proves that Consumer Sentiment does indirectly affect economic growth. 
 
 #### Interpreting the Accuracy Metrics:
 
@@ -92,7 +100,7 @@ Through our initial time-series analysis, we observed that the U.S. economy is h
 ### 2. How long do economic variables take to affect Economic Growth?
 Our mathematical model proved that economic shocks do not happen overnight. The Vector AutoRegression (VAR) analysis revealed that variables like the Federal Funds Rate and Unemployment Rate act as strong, delayed forces. It takes several quarters for a hike in interest rates or a spike in job losses to fully seep into the system and drag down the overall Economic Growth Rate.
 ### 3. Does “Consumer Sentiment” actually drive real Economic Growth, or is it merely statistical noise?
-Perhaps the most surprising finding was the statistical insignificance of Consumer Sentiment. The Impulse Response Function (IRF) visualizations showed that when a shock is applied to Consumer Sentiment, the 95% confidence interval (the grey shaded area) completely crosses the zero line. This means that when controlling for hard, and concrete data, like unemployment and interest rates, how people feel about the economy is just statistical noise. It is a trailing indicator; a mirror reflecting the economy, not a motor driving it.
+It is absolutely **NOT** just noise! If we only looked at direct mathematical equations, we might mistakenly conclude that human emotions don't matter. However, our VAR simulation (IRF) proved that an optimistic public creates a powerful domino effect. An increase in Consumer Sentiment indirectly drives real Economic Growth exactly two quarters (6 months) later. This mathematically proves that how people feel about the economy eventually translates into real-world economic activity.
 ### 4. To what extent can we mathematically model and predict the structural portion of Economic Growth?
 By stripping away the statistical noise and focusing only on structurally significant variables with optimal lags, we successfully built a predictive equation. Our model achieved an $R^2$ score of 0.253. This mathematically proves that about 25.3% of America's Economic Growth is strictly determined by the delayed cycles of past economic indicators. The remaining 75% represents the unpredictable events (like global pandemics) that cannot be forecasted by structural models.
 
@@ -100,8 +108,11 @@ By stripping away the statistical noise and focusing only on structurally signif
 ### Challenges & Learning a New Technique
 The most challenging part of this project was the implementation of the Vector AutoRegression (VAR) model and Impulse Response Functions (IRF). Understanding why we need to convert raw GDP into Growth Rates was a steep learning curve. Furthermore, interpreting a system of equations where variables impact each other with varying time lags required a completely different way of thinking compared to standard linear regression. However, this challenge was very interesting, that I now feel that I have discovered completely different from what I have been learning before.
 
+### What surprised me the most
+The biggest surprise was the difference between direct mathematical equations and VAR simulations (IRF). I initially thought Consumer Sentiment was just statistical noise because its p-values were not significant in the direct equation for GDP. However, by looking closely at the IRF graphs, I discovered it actually has a significant indirect impact on the economy exactly two quarters later. This realization taught me that the interpretation can be different across analyses, and we cannot fully rely on one of them, as we will find ourselves missing some intuition otherwise.
+
 ### Future Extensions
-If I had more time and resources, I would extend this project by introducing variables that capture global supply chain metrics or energy prices (like crude oil). I would also be interested in applying this exact same VAR framework to other countries, such as Japan or the Eurozone, to see if their economies remember shocks for longer or shorter periods than the U.S.
+If I had more time and resources, I would extend this project by introducing. variables that capture global supply chain metrics or energy prices (like crude. oil). I would also be interested in applying this exact same VAR framework to other countries, such as Japan or the Eurozone, to see if their economies remember shocks for longer or shorter periods than the U.S.
 
 ## References & Resources
 **Data Sources**
