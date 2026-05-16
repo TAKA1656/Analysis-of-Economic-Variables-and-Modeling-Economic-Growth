@@ -47,6 +47,8 @@ Visually, there appears to be a natural friction between the Unemployment Rate a
 
 ### 3. Impulse Response Analysis
 Here, we will run the Impulse Response Function (IRF). An IRF allows us to simulate a hypothetical scenario: What exactly happens to Economic Growth over the next 10 quarters if we apply a sudden “shock” (a 1-standard-deviation increase) to one specific variable, while holding everything else constant? Below is the resulting plot from the analysis.
+<img width="1248" height="1200" alt="newplot" src="https://github.com/user-attachments/assets/ef586334-70d0-4000-a6fd-307c6aa3303b" />
+
 
 #### How to Read the Impulse Response Graphs
 Before diving into the results, here is a quick guide on how to interpret the Impulse Response Function (IRF) charts below.
@@ -71,6 +73,8 @@ One of the most surprising insights came from testing Consumer Sentiment. While 
 
 ### 4. Actual vs. Predicted Growth
 Given the information above, we are able to create an equation that best represents the present Economic Growth with given parameters. The graph below plots the actual historical Economic Growth (Blue) against what our mathematical model predicted (Red).
+<img width="1264" height="569" alt="newplot (1)" src="https://github.com/user-attachments/assets/00fcd7c3-a3ed-4d47-a8ce-83fc4f7d1d4d" />
+
 
 #### Interpreting the Accuracy Metrics:
 
