@@ -107,8 +107,9 @@ If I had more time and resources, I would extend this project by introducing var
 * Unemployment Rate (UNRATE) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/UNRATE)
 * Real Gross Domestic Product (GDPC1) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/GDPC1)
 * Plotly Dropdown Button: https://plotly.com/python/dropdowns/
+**Resources for Coding**
 * Stationarity of Data: https://otexts.com/fpp3/stationarity.html
 * VAR Model Implementation: [Official statsmodels VAR documentation](https://www.statsmodels.org/stable/vector_ar.html)
 * IRF(Impulse Response Function): https://www.statsmodels.org/stable/generated/statsmodels.tsa.vector_ar.irf.IRAnalysis.html
 * Plotting Error Bands: [Plotly Continuous Error Bands](https://plotly.com/python/continuous-error-bars/)
-* **AI Assistance:** Gemini (for code debugging, optimization)
+* AI Assistance: Gemini (for code debugging, optimization)
