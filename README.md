@@ -57,7 +57,7 @@ Before diving into the results, here is a quick guide on how to interpret the Im
 
 * **The Solid Colored Line:** This represents our model's main prediction of how Economic Growth will react over the next 10 quarters after a sudden shock.
 
-* **The Grey Shaded Area (The Margin of Error):** This is the 95% Confidence Interval. Because predicting the economy is never 100% certain, this grey zone shows the range of possible outcomes.
+* **The Green Shaded Area (The Margin of Error):** This is the 95% Confidence Interval. Because predicting the economy is never 100% certain, this grey zone shows the range of possible outcomes.
 
 * **Crossing Zero:** If the grey shaded area crosses or touches the zero line, it means the effect is not statistically significant. In this case, the impact is so uncertain that the true effect might just be zero. We can only confidently say a shock has a real impact when the entire grey area is clearly above or below the zero line.
 
