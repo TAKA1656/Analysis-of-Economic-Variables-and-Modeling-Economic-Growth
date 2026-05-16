@@ -110,9 +110,9 @@ If I had more time and resources, I would extend this project by introducing var
 * Consumer Price Index for All Urban Consumers: All Items in U.S. City Average (CPIAUCSL) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/CPIAUCSL)
 * Unemployment Rate (UNRATE) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/UNRATE)
 * Real Gross Domestic Product (GDPC1) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/GDPC1)
-* Plotly Dropdown Button: https://plotly.com/python/dropdowns/
-  
+
 **Resources for Coding**
+* Plotly Dropdown Button: https://plotly.com/python/dropdowns/
 * Stationarity of Data: https://otexts.com/fpp3/stationarity.html
 * VAR Model Implementation: [Official statsmodels VAR documentation](https://www.statsmodels.org/stable/vector_ar.html)
 * IRF(Impulse Response Function): https://www.statsmodels.org/stable/generated/statsmodels.tsa.vector_ar.irf.IRAnalysis.html
