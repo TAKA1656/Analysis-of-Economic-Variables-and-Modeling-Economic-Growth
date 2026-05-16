@@ -24,11 +24,11 @@ Unlike simple linear regressions, a VAR model consists of a system of equations 
 ### Data Used
 I used the data all from Federal Reserve Bank of St.Louis as csv files.
 
-* University of Michigan: Consumer Sentiment (UMCSENT) from Federal Reserve Bank of St.Louis
-* Federal Funds Effective Rate (FEDFUNDS) from Federal Reserve Bank of St.Louis
-* Consumer Price Index for All Urban Consumers: All Items in U.S. City Average (CPIAUCSL) from Federal Reserve Bank of St.Louis
-* Unemployment Rate (UNRATE) from Federal Reserve Bank of St.Louis
-* Real Gross Domestic Product (GDPC1) from Federal Reserve Bank of St.Louis
+* University of Michigan: Consumer Sentiment (UMCSENT) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/UMCSENT)
+* Federal Funds Effective Rate (FEDFUNDS) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/FEDFUNDS)
+* Consumer Price Index for All Urban Consumers: All Items in U.S. City Average (CPIAUCSL) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/CPIAUCSL)
+* Unemployment Rate (UNRATE) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/UNRATE)
+* Real Gross Domestic Product (GDPC1) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/GDPC1)
   
 ## Procedure
 ### 1. Data Collection and Wrangling
@@ -40,13 +40,10 @@ Before feeding the data into a complex mathematical model, it is crucial to visu
 #### Key Observations:
 
 * **Major Economic Shocks** <br>
-We can clearly identify massive spikes and drops in the Economic Growth Rate and Unemployment Rate, particularly around the 2008 Financial Crisis and the 2020 COVID-19 pandemic. These are profound, unpredictable external shocks.
+We can clearly identify massive spikes and drops in the Real GDP and Unemployment Rate, particularly around the 2008 Financial Crisis and the 2020 COVID-19 pandemic. These are profound, unpredictable external shocks.
 
 * **Inverse Relationships** <br>
-Visually, there appears to be a natural friction between the Unemployment Rate and Economic Growth, when one spikes, the other reacts as well.
-
-* **The “Lag” Intuition** <br>
-If you look closely at the Federal Funds Rate and Inflation, their peaks and valleys do not always perfectly align with the dips in Economic Growth. They seem to trail behind or precede the growth curve, confirming our initial hypothesis: economic variables do not react instantly; they operate on a time delay.
+Visually, there appears to be a natural friction between the Unemployment Rate and Economic Growth, when one spikes, the other reacts in the opposite direction.
 
 ### 3. Impulse Response Analysis
 Here, we will run the Impulse Response Function (IRF). An IRF allows us to simulate a hypothetical scenario: What exactly happens to Economic Growth over the next 10 quarters if we apply a sudden “shock” (a 1-standard-deviation increase) to one specific variable, while holding everything else constant? Below is the resulting plot from the analysis.
@@ -78,7 +75,7 @@ Given the information above, we are able to create an equation that best represe
 #### Interpreting the Accuracy Metrics:
 
 * **An $R^2$ of 0.253** <br>
-In the context of physics, a 25% explanatory power might seem low. However, in macroeconomics, this is a profound finding. It mathematically proves that about 25% of the U.S. economic growth is strictly driven by the structural, delayed cycles of past unemployment, interest rates, and inflation.
+A 25% explanatory power might seem low. However, in macroeconomics, this is a profound finding. It mathematically proves that about 25% of the U.S. economic growth is strictly driven by the structural, delayed cycles of past unemployment, interest rates, and inflation.
 * **The Remaining 75%** <br>
 The moments where the actual data (Blue) drastically breaks away from our prediction (Red)—such as the massive 2020 spike—represent the remaining 75%. These are the unpredictable events, like global pandemics or sudden geopolitical crises, which cannot be forecasted merely by looking at last quarter’s interest rates.
 
@@ -93,11 +90,25 @@ Our mathematical model proved that economic shocks do not happen overnight. The 
 ### 3. Does “Consumer Sentiment” actually drive real Economic Growth, or is it merely statistical noise?
 Perhaps the most surprising finding was the statistical insignificance of Consumer Sentiment. The Impulse Response Function (IRF) visualizations showed that when a shock is applied to Consumer Sentiment, the 95% confidence interval (the grey shaded area) completely crosses the zero line. This means that when controlling for hard, and concrete data, like unemployment and interest rates, how people feel about the economy is just statistical noise. It is a trailing indicator; a mirror reflecting the economy, not a motor driving it.
 ### 4. To what extent can we mathematically model and predict the structural portion of Economic Growth?
-By stripping away the statistical noise and focusing only on structurally significant variables with optimal lags, we successfully built a predictive equation. Our model achieved an $R^2$ score of 0.253. This mathematically proves that about 25.3% of America's Economic Growth is strictly determined by the delayed cycles of past economic indicators. The remaining 75% represents the unpredictable "black swan" events (like global pandemics) that cannot be forecasted by structural models.
+By stripping away the statistical noise and focusing only on structurally significant variables with optimal lags, we successfully built a predictive equation. Our model achieved an $R^2$ score of 0.253. This mathematically proves that about 25.3% of America's Economic Growth is strictly determined by the delayed cycles of past economic indicators. The remaining 75% represents the unpredictable events (like global pandemics) that cannot be forecasted by structural models.
 
 ## Reflection
 ### Challenges & Learning a New Technique
 The most challenging part of this project was the implementation of the Vector AutoRegression (VAR) model and Impulse Response Functions (IRF). Understanding why we need to convert raw GDP into Growth Rates was a steep learning curve. Furthermore, interpreting a system of equations where variables impact each other with varying time lags required a completely different way of thinking compared to standard linear regression. However, this challenge was very interesting, that I now feel that I have discovered completely different from what I have been learning before.
 
 ### Future Extensions
-If I had more time and resources, I would extend this project by introducing variables that capture global supply chain metrics or energy prices (like crude oil). I would also be interested in applying this exact same VAR framework to other countries, such as Japan or the Eurozone, to see if their economies “remember” shocks for longer or shorter periods than the U.S.
+If I had more time and resources, I would extend this project by introducing variables that capture global supply chain metrics or energy prices (like crude oil). I would also be interested in applying this exact same VAR framework to other countries, such as Japan or the Eurozone, to see if their economies remember shocks for longer or shorter periods than the U.S.
+
+## References & Resources
+**Data Sources**
+* University of Michigan: Consumer Sentiment (UMCSENT) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/UMCSENT)
+* Federal Funds Effective Rate (FEDFUNDS) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/FEDFUNDS)
+* Consumer Price Index for All Urban Consumers: All Items in U.S. City Average (CPIAUCSL) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/CPIAUCSL)
+* Unemployment Rate (UNRATE) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/UNRATE)
+* Real Gross Domestic Product (GDPC1) from Federal Reserve Bank of St.Louis (https://fred.stlouisfed.org/series/GDPC1)
+* Plotly Dropdown Button: https://plotly.com/python/dropdowns/
+* Stationarity of Data: https://otexts.com/fpp3/stationarity.html
+* VAR Model Implementation: [Official statsmodels VAR documentation](https://www.statsmodels.org/stable/vector_ar.html)
+* IRF(Impulse Response Function): https://www.statsmodels.org/stable/generated/statsmodels.tsa.vector_ar.irf.IRAnalysis.html
+* Plotting Error Bands: [Plotly Continuous Error Bands](https://plotly.com/python/continuous-error-bars/)
+* **AI Assistance:** Gemini (for code debugging, optimization)
