@@ -81,7 +81,7 @@ Given the information above, we are able to create an equation that best represe
 * **An $R^2$ of 0.253** <br>
 A 25% explanatory power might seem low. However, in macroeconomics, this is a profound finding. It mathematically proves that about 25% of the U.S. economic growth is strictly driven by the structural, delayed cycles of past unemployment, interest rates, and inflation.
 * **The Remaining 75%** <br>
-The moments where the actual data (Blue) drastically breaks away from our prediction (Red)—such as the massive 2020 spike—represent the remaining 75%. These are the unpredictable events, like global pandemics or sudden geopolitical crises, which cannot be forecasted merely by looking at last quarter’s interest rates.
+The moments where the actual data (Blue) drastically breaks away from our prediction (Red), such as the massive 2020 spike—represent the remaining 75%. These are the unpredictable events, like global pandemics or sudden geopolitical crises, which cannot be forecasted merely by looking at last quarter’s interest rates.
 
 
 ## Conclusion
