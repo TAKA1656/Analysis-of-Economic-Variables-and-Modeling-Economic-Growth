@@ -35,7 +35,7 @@ I used the data all from Federal Reserve Bank of St.Louis as csv files.
 I collected five different economic indicators from public databases. However, real-world data is rarely perfect—each dataset covered different time periods and frequencies. To ensure an accurate analysis, I merged these distinct sources by matching their observation dates, keeping only the timeframe where all five indicators perfectly overlapped. This gave me a clean, unified dataset to base my mathematical models on.
 
 ### 2. Visualizing the Macroeconomic Landscape over Time
-Before feeding the data into a complex mathematical model, it is crucial to visually inspect the historical trends of our variables. The time-series plots belowvariables.html illustrate the dynamic behavior of the U.S. economy over the past few decades. 
+Before feeding the data into a complex mathematical model, it is crucial to visually inspect the historical trends of our variables. The time-series plots below illustrate the dynamic behavior of the U.S. economy over the past few decades. 
 
 #### Key Observations:
 
